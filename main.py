@@ -13,6 +13,7 @@ class Fishing:
             btnThrow = pyautogui.moveTo(throw_position)
             pyautogui.click(btnThrow)
             print("Lempar umpan!")
+            print("Tunggu...")
             self.position = 1
 
     def pull(self):
@@ -32,7 +33,6 @@ class Fishing:
             elif self.position == 0:
                 self.throw()
             elif self.position == 1:
-                print("Tunggu...")
                 self.pull()
 
 if __name__ == "__main__":
