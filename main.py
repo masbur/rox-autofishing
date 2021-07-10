@@ -1,24 +1,42 @@
 from pyautogui import *
 import pyautogui
-from time import sleep
 
-jumlah = 100
-i = 0
-while i < jumlah :
-    lembar = pyautogui.locateCenterOnScreen('image/lempar.png', confidence=.8)
-    angkat = pyautogui.locateCenterOnScreen('image/angkat.png', confidence=.8)
-    if lembar != None:
-        btnLempar = pyautogui.moveTo(lembar)
-        pyautogui.click(btnLempar)
-        print("Lempar umpan!")
-        sleep(0.1)
-    elif angkat != None:
-        btnAngkat = pyautogui.moveTo(angkat)
-        pyautogui.click(btnAngkat)
-        i+=1
-        print("Tarik mang!")
-        print("Dapat ikan ", i)
-        sleep(0.1)
-    else:
-        print("Tunggu...")
-        sleep(0.1)
+class Fishing:
+    def __init__(self, max_fishing):
+        self.max_fishing = max_fishing
+        self.position = 0
+        self.amount = 0
+
+    def throw(self):
+        throw_position = pyautogui.locateCenterOnScreen('image/lempar.png', confidence=.8)
+        if throw_position != None:
+            btnThrow = pyautogui.moveTo(throw_position)
+            pyautogui.click(btnThrow)
+            print("Lempar umpan!")
+            self.position = 1
+
+    def pull(self):
+        pull_position = pyautogui.locateCenterOnScreen('image/angkat.png', confidence=.8)
+        if pull_position != None:
+            btnPull = pyautogui.moveTo(pull_position)
+            pyautogui.click(btnPull)
+            print("Tarik mang!")
+            self.amount += 1
+            print("Dapat ikan ", self.amount)
+            self.position = 0
+
+    def fishing(self):
+        while True:
+            if self.amount >= self.max_fishing:
+                break
+            elif self.position == 0:
+                self.throw()
+            elif self.position == 1:
+                print("Tunggu...")
+                self.pull()
+
+if __name__ == "__main__":
+    print("Mulai memancing")
+    
+    letsgo = Fishing(10)
+    letsgo.fishing()
