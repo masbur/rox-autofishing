@@ -38,5 +38,7 @@ class Fishing:
 if __name__ == "__main__":
     print("Mulai memancing")
     
-    letsgo = Fishing(10)
+    max_fishing = 10
+    
+    letsgo = Fishing(max_fishing)
     letsgo.fishing()
