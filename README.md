@@ -1,10 +1,17 @@
 Ragnarok X Mobile - Auto Fishing
 
-This project using python with pyautogui.
+This project using python with pyautogui
 
 Requirement
 - pip install pyautogui
 - pip install Pillow
+
+Support OS
+- Windows
+- MacOS
+- Linux
+
+Tested on bluestack
 
 Auto fishing based image file. please screenshot your own images.
 
@@ -13,5 +20,3 @@ Example = region(left, top, width, hight)
 
 Donation
 https://saweria.co/masbur
-
-Tested on bluestack
