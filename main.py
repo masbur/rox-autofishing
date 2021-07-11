@@ -8,7 +8,7 @@ class Fishing:
         self.amount = 0
 
     def throw(self):
-        throw_position = pyautogui.locateCenterOnScreen('image/lempar.png', confidence=.8)
+        throw_position = pyautogui.locateCenterOnScreen('image/lempar.png', confidence=.8, region=(1675, 353, 400, 400))
         if throw_position != None:
             btnThrow = pyautogui.moveTo(throw_position)
             pyautogui.click(btnThrow)
@@ -17,7 +17,7 @@ class Fishing:
             self.position = 1
 
     def pull(self):
-        pull_position = pyautogui.locateCenterOnScreen('image/angkat.png', confidence=.8)
+        pull_position = pyautogui.locateCenterOnScreen('image/angkat.png', confidence=.9, region=(1675, 353, 400, 400))
         if pull_position != None:
             btnPull = pyautogui.moveTo(pull_position)
             pyautogui.click(btnPull)
