@@ -14,6 +14,9 @@ Support OS
 
 Tested on bluestack
 
+Tutorial on Youtube
+https://youtu.be/yvawu3us12Q
+
 Auto fishing based image file. please screenshot your own images.
 
 Important to set region with your custom position to make faster recognise the image.
