@@ -17,7 +17,7 @@ class Fishing:
             self.position = 1
 
     def pull(self):
-        pull_position = pyautogui.locateCenterOnScreen('image/angkat.png', confidence=.9, region=(1675, 353, 400, 400))
+        pull_position = pyautogui.locateCenterOnScreen('image/tarik.png', confidence=.9, region=(1675, 353, 400, 400))
         if pull_position != None:
             btnPull = pyautogui.moveTo(pull_position)
             pyautogui.click(btnPull)
