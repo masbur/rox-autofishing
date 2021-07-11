@@ -5,6 +5,7 @@ This project using python with pyautogui
 Requirement
 - pip install pyautogui
 - pip install Pillow
+- pip install opencv-python
 
 Support OS
 - Windows
